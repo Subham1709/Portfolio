@@ -163,7 +163,8 @@ footer a:hover{color:var(--accent)}
 
 /* life page */
 .life-hero{position:relative;border-radius:28px;overflow:hidden;margin-top:24px;aspect-ratio:21/9;min-height:360px}
-.life-hero img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.life-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.life-hero .loc{position:absolute;z-index:1;top:18px;right:18px;background:rgba(10,14,12,.45);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:999px;backdrop-filter:blur(6px)}
 .life-hero .over{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.65));display:flex;flex-direction:column;justify-content:flex-end;padding:40px;color:#fff}
 .life-hero h1{margin:0 0 8px;color:#fff}
 .life-hero h1 em{color:#9be8d4}
