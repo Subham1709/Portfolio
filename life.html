@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subham Agrawal · Off the clock</title>
+<meta name="description" content="Subham Agrawal off the clock: photography, filmmaking, guitar, books, treks, travel and running.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="index.html">Subham Agrawal</a>
+  <div class="links">
+    <a href="index.html">Work</a>
+    <a href="#photography" class="hide-sm">Photos</a>
+    <a href="#outdoors" class="hide-sm">Outdoors</a>
+    <button id="theme" aria-label="Toggle theme">◐</button>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <div class="eyebrow">Off the clock</div>
+  <h1>The other half of me.</h1>
+  <p class="lead">I spend my days on data and markets. The rest goes into a camera, a guitar, a book, a trail, or the gym.</p>
+</header>
+
+<section id="photography">
+  <h2>Photography and film</h2>
+  <p style="margin:0;max-width:640px">The camera taught me to notice things. I ran media for Prometeo '26, where several of our reels crossed 500k views, and I mentored 50+ students at Frame-X, IIT Jodhpur's filmmaking society.</p>
+  <div class="photos" id="photos"></div>
+  <div class="cta"><a class="btn primary" href="https://www.instagram.com/subham_.snaps" target="_blank" rel="noopener">More on Instagram ↗</a></div>
+</section>
+
+<section id="hobbies">
+  <h2>What I'm into</h2>
+  <div class="hob">
+    <div class="card"><span class="now">Reading now</span><h3>Books</h3><p><em>The Count of Monte Cristo</em>, a few pages every night.</p></div>
+    <div class="card"><span class="now">Learning</span><h3>Fingerstyle guitar</h3><p>Slowly working through songs one arrangement at a time.</p></div>
+    <div class="card"><span class="now">Training</span><h3>Gym and running</h3><p>Morning gym and tennis, building up to a steady 5k.</p></div>
+    <div class="card"><span class="now">On stage</span><h3>Speaking and comedy</h3><p>Cultural Captain for Speaking and Comedic Arts at Inter IIT Cultural Meet 7.0 and 8.0.</p></div>
+  </div>
+</section>
+
+<section id="outdoors">
+  <h2>Travel and treks</h2>
+  <div class="row"><div><strong>Add a trek or trip here</strong><p>Where, when, and one line on what made it worth it.</p></div><div class="yr">year</div></div>
+</section>
+</main>
+
+<footer><div class="wrap"><a href="index.html">← Back to work</a><a href="#">Back to top ↑</a></div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n);}catch(e){}
+  });
+  // Shows photos/1.jpg ... photos/12.jpg if present; missing files are skipped.
+  var g=document.getElementById('photos');
+  for(var i=1;i<=12;i++){(function(i){
+    var img=new Image();img.alt='Photo by Subham Agrawal';
+    img.style.display='none';g.appendChild(img);
+    img.onload=function(){img.style.display='';};
+    img.onerror=function(){img.remove();};
+    img.src='photos/'+i+'.jpg';
+  })(i);}
+})();
+</script>
+</body>
+</html>
