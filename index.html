@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subham Agrawal</title>
+<meta name="description" content="Subham Agrawal, final-year IIT Jodhpur undergraduate (minor in Mathematical and Computational Economics). Research on Indian market volatility, India VIX and out-of-sample model testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --text:#16181d; --muted:#5b616e; --line:#e6e3dc;
+  --accent:#0f6b5c; --accent-soft:#e3f1ee; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115; --surface:#161920; --text:#eceef2; --muted:#9aa1ae; --line:#262a33;
+    --accent:#4cc3a8; --accent-soft:#16302b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#161920; --text:#eceef2; --muted:#9aa1ae; --line:#262a33;
+  --accent:#4cc3a8; --accent-soft:#16302b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+nav .logo{font-weight:700;color:var(--text)}
+nav .links{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}
+nav .links a{color:var(--muted)}
+nav .links a:hover{color:var(--text);text-decoration:none}
+header{padding:72px 0 48px}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.02em}
+h1{font-size:clamp(32px,6vw,48px);line-height:1.1;margin:10px 0 16px;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;border:1px solid var(--line);color:var(--text);font-weight:500;font-size:15px;background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0f1115}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0f1115}}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:40px}
+.stat{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:14px 16px}
+.stat b{display:block;white-space:nowrap;font-family:var(--mono);font-size:clamp(17px,4.6vw,22px);color:var(--accent)}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:13px;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 22px;font-weight:500}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:16px}
+.card h3{margin:0 0 4px;font-size:19px;letter-spacing:-.01em}
+.meta{font-size:14px;color:var(--muted);margin-bottom:12px}
+.card ul{margin:0;padding-left:18px}
+.card li{margin:6px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:12px;font-family:var(--mono);background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:6px}
+.card .links{margin-top:14px;display:flex;gap:16px;font-size:14px;font-weight:500;flex-wrap:wrap}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .yr{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+.row p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill h4{margin:0 0 6px;font-size:15px}
+.skill p{margin:0;color:var(--muted);font-size:15px}
+footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:13px}
+@media (max-width:600px){nav .links a.hide-sm{display:none}.row{flex-direction:column;gap:2px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#">Subham Agrawal</a>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#experience" class="hide-sm">Experience</a>
+    <a href="#leadership" class="hide-sm">Leadership</a>
+    <a href="#contact">Contact</a>
+    <button id="theme" aria-label="Toggle theme">◐</button>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <div class="eyebrow">IIT Jodhpur · B.Tech 2027 · Minor in Mathematical &amp; Computational Economics</div>
+  <h1>I test market ideas on data, out of sample.</h1>
+  <p class="lead">I'm a final-year undergraduate researching Indian market volatility in Python: India VIX, realised-volatility forecasting and option-hedging backtests. I'm looking for quant trading and research roles.</p>
+  <div class="cta">
+    <a class="btn primary" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    <a class="btn" href="https://github.com/Subham1709" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/subham-agrawal-5b924128a/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>78%</b><span>of days Nifty implied vol exceeded realised (2020–26)</span></div>
+    <div class="stat"><b>−38% → −22%</b><span>max drawdown with a VIX-timed protective put</span></div>
+    <div class="stat"><b>0.905</b><span>AUC on unseen regions, spatially cross-validated</span></div>
+    <div class="stat"><b>Top 1%</b><span>JEE Main 2023, of 1.3 million</span></div>
+  </div>
+</header>
+
+<section id="work">
+  <h2>Selected work</h2>
+
+  <div class="card">
+    <h3>Volatility Dynamics and the Fear Index: Nifty 50 and India VIX</h3>
+    <div class="meta">2026 · Team project, Financial Derivatives and Risk Management</div>
+    <ul>
+      <li>Analysed 1,536 days of Nifty 50 and India VIX (2020–26). Implied volatility exceeded realised on 78% of days (Newey-West t = 2.8), a persistent variance risk premium.</li>
+      <li>Re-implemented NSE's VIX formula from option prices, then split the market into low, normal and high fear regimes, including the June 2024 election shock.</li>
+      <li>Backtested Black-Scholes-priced protective puts. A VIX-timed hedge cut maximum drawdown from −38% to −22%, most of it in the March 2020 crash.</li>
+    </ul>
+    <div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">statsmodels</span><span class="tag">Black-Scholes</span></div>
+    <div class="links"><a href="https://subham-fdrm-vix.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/FDRM_VIX" target="_blank" rel="noopener">Code ↗</a></div>
+  </div>
+
+  <div class="card">
+    <h3>Landslide Susceptibility Mapping with GIS and Machine Learning</h3>
+    <div class="meta">2026 · B.Tech project under Prof. Susmita Panda</div>
+    <ul>
+      <li>Built a landslide-risk model on 4,431 events and 14 satellite-derived factors in Hamirpur, Himachal Pradesh, comparing kNN, SVM, ANN, Random Forest and XGBoost.</li>
+      <li>Showed that random splits leak information (XGBoost AUC 0.97 vs 0.85 on held-out 5 km blocks), the same trap as look-ahead bias in a backtest. Tuned on spatial cross-validation; the final SVM scored AUC 0.905 on unseen regions.</li>
+    </ul>
+    <div class="tags"><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Google Earth Engine</span><span class="tag">spatial CV</span></div>
+    <div class="links"><a href="https://subham-btp-landslide.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/BTP" target="_blank" rel="noopener">Code ↗</a></div>
+  </div>
+
+  <div class="card">
+    <h3>Key Factors for Initial Funding of Indian Startups</h3>
+    <div class="meta">2025 · Research paper with Somya Jangir under Dr. Sanyka Banerjee</div>
+    <ul>
+      <li>Compiled and cleaned data on 585 funded Indian startups (2019–21, USD 1.95B) and built a six-factor framework of what drives early-stage funding, checked against a founder interview.</li>
+    </ul>
+    <div class="tags"><span class="tag">data cleaning</span><span class="tag">econometrics</span></div>
+    <div class="links"><a href="https://drive.google.com/drive/folders/1DRlyDjdXAykTRInqGvbj8JNcpJaTCu94?usp=sharing" target="_blank" rel="noopener">Paper ↗</a></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Competitions and training</h2>
+  <div class="row"><div><strong>Inter IIT Tech Meet 13.0 (Zelta Labs), Quant team</strong><p>Built crypto price-direction models from time-series features, with statistical tests to check the signals weren't noise. The IIT Jodhpur team ranked 11th overall.</p></div><div class="yr">2024</div></div>
+  <div class="row"><div><strong>VC Analyst Case Study, Fin Maverick</strong><p>Team ranked 4th of 159; picked 3 of 20 startups for a USD 10M fund.</p></div><div class="yr">2026</div></div>
+  <div class="row"><div><strong>Quantitative Finance Cohort '24, Quant Delegate</strong><p>Stochastic calculus, options pricing, volatility models. <a href="https://credsverse.com/credentials/fb394c24-68a1-429c-a0e9-6f4c06b3bbfe" target="_blank" rel="noopener">Certificate ↗</a></p></div><div class="yr">2024</div></div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid2">
+    <div class="skill"><h4>Probability and statistics</h4><p>Conditional probability, expectation, hypothesis tests, regression, time series (HAR, Newey-West)</p></div>
+    <div class="skill"><h4>Derivatives</h4><p>Black-Scholes, Greeks, put-call parity, delta hedging, implied vs realised volatility</p></div>
+    <div class="skill"><h4>Machine learning</h4><p>SVM, Random Forest, XGBoost, ANN, kNN; spatial and time-series cross-validation</p></div>
+    <div class="skill"><h4>Programming</h4><p>Python (pandas, NumPy, SciPy, statsmodels, scikit-learn), SQL, C++</p></div>
+  </div>
+  <p class="meta" style="margin-top:18px">Coursework: Probability, Statistics and Stochastic Processes; Econometrics Lab; Games and Economic Behavior; DSA; Financial Derivatives and Risk Management; ML for Economics.</p>
+</section>
+
+<section id="leadership">
+  <h2>Leadership</h2>
+  <div class="row"><div><strong>Assistant Head of Finance, Prometeo '25</strong><p>Budgeted events and artists: about ₹15 lakh of the festival's ₹40 lakh+ budget.</p></div><div class="yr">2025</div></div>
+  <div class="row"><div><strong>Head of Media, Prometeo '26</strong><p>Led 25+ juniors across ideation, shoots and production; several reels crossed 500k views.</p></div><div class="yr">2025–26</div></div>
+  <div class="row"><div><strong>Cultural Captain, Inter IIT Cultural Meet 7.0 and 8.0</strong><p>Led a 25+ member contingent at IIT Patna and IIT Kanpur; top-10 finishes in several events.</p></div><div class="yr">2024–25</div></div>
+  <div class="row"><div><strong>Coordinator, Frame-X Filmmaking Society</strong><p>Mentored 50+ students through workshops.</p></div><div class="yr">2024–25</div></div>
+</section>
+
+<section id="recognition">
+  <h2>Recognition</h2>
+  <div class="row"><div><strong>JEE Main 2023</strong><p>Top 1% of 1.3 million candidates.</p></div><div class="yr">2023</div></div>
+  <div class="row"><div><strong>WorldQuant Challenge, Bronze level</strong><p><a href="https://drive.google.com/file/d/1Ai9T4OmtH8CdrXAeMgB1MoSNol4ROZGu/view?usp=sharing" target="_blank" rel="noopener">Certificate ↗</a></p></div><div class="yr">2024</div></div>
+  <div class="row"><div><strong>IICPC Competitive Programming Summer Camp</strong><p><a href="https://drive.google.com/file/d/1OgtiTRjaguWNaxp2SFJDNibStaM4esqH/view?usp=sharing" target="_blank" rel="noopener">Certificate ↗</a></p></div><div class="yr">2024</div></div>
+  <div class="row"><div><strong>IOQM, top 300 in Odisha</strong><p><a href="https://drive.google.com/file/d/14cF2TTk1Kzqj_IvLtD4ZMzSbuDEJDora/view?usp=sharing" target="_blank" rel="noopener">Certificate ↗</a></p></div><div class="yr">2020</div></div>
+  <div class="row"><div><strong>GATE Civil Engineering, qualified</strong><p></p></div><div class="yr">2026</div></div>
+</section>
+
+<section id="beyond">
+  <h2>Beyond the analysis</h2>
+  <p style="margin:0;max-width:640px">Photography, filmmaking and stand-up taught me to find the one detail that makes a story click, and I use the same habit when explaining a model. <a href="https://www.instagram.com/subham_.snaps" target="_blank" rel="noopener">My photography ↗</a></p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="margin:0 0 16px;font-size:18px">Open to quant trading, quant research and risk roles.</p>
+  <div class="cta" style="margin-top:0">
+    <a class="btn primary" href="mailto:b23ci1038@iitj.ac.in">b23ci1038@iitj.ac.in</a>
+    <a class="btn" href="https://www.linkedin.com/in/subham-agrawal-5b924128a/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://drive.google.com/drive/folders/1DF7dOJQuO5HEfbirFlYNqWcP8uMit14j?usp=sharing" target="_blank" rel="noopener">All certificates</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Subham Agrawal</span><a href="#">Back to top ↑</a></div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
