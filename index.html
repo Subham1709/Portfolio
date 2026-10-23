@@ -56,10 +56,25 @@
 <section id="work">
   <div class="sec-head reveal">
     <div><span class="num">01 / SELECTED WORK</span><h2>Things I've <em>built and tested.</em></h2></div>
-    <p>Three projects, each with a number I can defend in an interview.</p>
+    <p>Four projects, each with a number I can defend in an interview.</p>
   </div>
 
   <div class="projects">
+    <article class="project reveal">
+      <div class="p-img"><span class="tag-float">DEEP LEARNING · DERIVATIVES · 2026</span><img src="img/proj-hedge.png" alt="Distribution of hedging profit and loss: deep hedge versus Heston delta hedge, with a much thinner loss tail for the deep hedge" loading="lazy"></div>
+      <div>
+        <div class="p-meta">Independent project · after Buehler et al., <i>Deep Hedging</i> (2019)</div>
+        <h3>Deep Hedging of Options</h3>
+        <ul>
+          <li>Trained a neural network in PyTorch to hedge a short option under <b>transaction costs and Heston stochastic volatility</b> (calibrated to SPX options), minimising the 95% tail loss (CVaR).</li>
+          <li>On 100,000 unseen paths it cut tail loss by <b>33%</b> versus Heston delta plus a variance swap, and by 4–11% versus delta hedges with a tuned no-trade band.</li>
+          <li>With costs it learned to trade less (<b>1.06 vs 2.27 shares</b> per path at 20 bp) and held up out of sample on 16 years of real NIFTY 50 paths.</li>
+        </ul>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">Heston</span><span class="chip">Monte Carlo</span><span class="chip">CVaR</span></div>
+        <div class="p-links"><a href="https://subham-deep-hedging.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Deep-Hedging-of-Options" target="_blank" rel="noopener">Code ↗</a></div>
+      </div>
+    </article>
+
     <article class="project reveal">
       <div class="p-img"><span class="tag-float">FINANCE · 2026</span><img src="img/proj-vix.png" alt="India VIX versus subsequently realised Nifty volatility, 2020 to 2026" loading="lazy"></div>
       <div>
