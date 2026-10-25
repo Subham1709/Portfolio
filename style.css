@@ -195,7 +195,7 @@ a.rc:hover{border-color:var(--accent)}
 .floor{position:absolute;left:-50%;right:-50%;bottom:0;height:72%;z-index:-1;background-image:linear-gradient(color-mix(in srgb,var(--accent) 55%,transparent) 2px,transparent 2px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 50%,transparent) 1px,transparent 1px);background-size:72px 72px;transform:perspective(440px) rotateX(58deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to top,#000 5%,transparent 80%);mask-image:linear-gradient(to top,#000 5%,transparent 80%);animation:floor 2.6s linear infinite}
 @keyframes floor{to{background-position:0 72px}}
 .contact .num{justify-content:center}
-.contact h2{font-size:clamp(64px,12vw,180px);line-height:.9;display:inline-block}
+.contact h2{font-size:clamp(56px,10.5vw,164px);line-height:.9;display:inline-block}
 .contact .btns{justify-content:center}
 footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
