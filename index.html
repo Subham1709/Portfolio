@@ -11,7 +11,7 @@
 <script>!function(r){r.classList.add('js');try{var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t);if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&(sessionStorage.getItem('pt')||!sessionStorage.getItem('seen')))r.classList.add('cover');}catch(e){}setTimeout(function(){r.classList.remove('cover')},4000)}(document.documentElement)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-tag="Markets, models, and the story in the data.">
@@ -28,30 +28,35 @@
 </div></nav>
 
 <main>
-<div class="wrap">
-  <header class="hero">
-    <div class="reveal">
-      <div class="eyebrow"><span class="dot"></span>Jodhpur, India · Open to quant roles</div>
-      <h1>Markets, models, <em>and the story in the data.</em></h1>
-      <p class="lead">I'm Subham, a final-year engineer at IIT Jodhpur with a minor in Mathematical and Computational Economics. I research Indian market volatility in Python, and I test every idea out of sample.</p>
-      <div class="btns">
-        <a class="btn primary" href="#work">See my work ↓</a>
-        <a class="btn" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
-        <a class="btn" href="#contact">Let's talk</a>
-      </div>
+<header class="hero" data-intro>
+  <canvas id="surface" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow rise" style="--dl:.15s"><span class="dot"></span>Jodhpur, India · Open to quant roles</div>
+    <h1>Markets, models, <em>and the story in the data.</em></h1>
+    <p class="lead rise" style="--dl:.55s">I'm Subham, a final-year engineer at IIT Jodhpur with a minor in Mathematical and Computational Economics. I research Indian market volatility in Python, and I test every idea out of sample.</p>
+    <div class="btns rise" style="--dl:.7s">
+      <a class="btn primary" href="#work">See my work ↓</a>
+      <a class="btn" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      <a class="btn" href="#contact">Let's talk</a>
     </div>
-    <div class="portrait reveal">
-      <div class="frame"><img src="img/portrait.jpg" alt="Subham Agrawal by a lake at sunset" width="1000" height="1250"></div>
-      <div class="badge b2"><small>Currently</small><b>Forecasting Nifty vol</b></div>
-      <div class="badge b1"><small>IIT Jodhpur</small><b>B.Tech '27</b></div>
-    </div>
-  </header>
-</div>
+  </div>
+  <div class="hero-hud rise" style="--dl:.9s" aria-hidden="true">
+    <span>σ(k, T) · IMPLIED-VOL SURFACE · ILLUSTRATIVE</span>
+    <span class="hh-r"><span>T <b id="hh-t">0.50</b>y</span><span>ATM σ <b id="hh-s">16.0</b>%</span><span>SKEW <b id="hh-k">−0.20</b></span></span>
+  </div>
+</header>
 
-<div class="marquee" aria-hidden="true"><div class="track">
-  <span>Volatility research</span><span>✳</span><span>Machine learning</span><span>✳</span><span>Derivatives</span><span>✳</span><span>Backtesting</span><span>✳</span><span>Photography</span><span>✳</span><span>Leadership</span><span>✳</span>
-  <span>Volatility research</span><span>✳</span><span>Machine learning</span><span>✳</span><span>Derivatives</span><span>✳</span><span>Backtesting</span><span>✳</span><span>Photography</span><span>✳</span><span>Leadership</span><span>✳</span>
-</div></div>
+<div class="ribbons" aria-hidden="true">
+  <div class="marquee r2"><div class="track">
+    <span>PyTorch</span><span>✳</span><span>Heston</span><span>✳</span><span>Monte Carlo</span><span>✳</span><span>Purged CV</span><span>✳</span><span>Order books</span><span>✳</span><span>CVaR</span><span>✳</span>
+    <span>PyTorch</span><span>✳</span><span>Heston</span><span>✳</span><span>Monte Carlo</span><span>✳</span><span>Purged CV</span><span>✳</span><span>Order books</span><span>✳</span><span>CVaR</span><span>✳</span>
+  </div></div>
+  <div class="marquee r1"><div class="track">
+    <span>Volatility research</span><span>✳</span><span>Machine learning</span><span>✳</span><span>Derivatives</span><span>✳</span><span>Backtesting</span><span>✳</span><span>Photography</span><span>✳</span><span>Leadership</span><span>✳</span>
+    <span>Volatility research</span><span>✳</span><span>Machine learning</span><span>✳</span><span>Derivatives</span><span>✳</span><span>Backtesting</span><span>✳</span><span>Photography</span><span>✳</span><span>Leadership</span><span>✳</span>
+  </div></div>
+</div>
 
 <div class="wrap">
 <section id="work">
@@ -170,20 +175,29 @@
 <section id="about">
   <div class="sec-head reveal"><div><span class="num">02 / ABOUT</span><h2>The person <em>behind the work.</em></h2></div></div>
   <div class="about">
-    <div class="reveal">
-      <p class="big">Civil engineering taught me how systems fail. Economics made me ask <em>why people decide the way they do.</em> Data is how I test both.</p>
-      <p style="color:var(--muted);margin-top:22px">Away from the screen I run media teams, captain cultural contingents and shoot photos. That's where I learned to lead people and to find the one detail that makes a story click.</p>
-      <div class="toolkit">
-        <span>Python</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>statsmodels</span><span>scikit-learn</span><span>XGBoost</span><span>SQL</span><span>C++</span><span>Black-Scholes</span><span>Greeks</span><span>HAR</span><span>Newey-West</span><span>Google Earth Engine</span>
+    <div class="portrait reveal">
+      <div class="p3d">
+        <div class="frame"><img src="img/portrait.jpg" alt="Subham Agrawal by a lake at sunset" width="1000" height="1250" loading="lazy"></div>
+        <div class="badge b2"><small>Currently</small><b>Forecasting Nifty vol</b></div>
+        <div class="badge b1"><small>IIT Jodhpur</small><b>B.Tech '27</b></div>
       </div>
     </div>
-    <div class="facts reveal">
-      <div class="fact"><span>Degree</span><span>B.Tech, Civil and Infrastructure Engg.</span></div>
-      <div class="fact"><span>Minor</span><span>Mathematical and Computational Economics</span></div>
-      <div class="fact"><span>Institute</span><span>IIT Jodhpur, 2023–2027</span></div>
-      <div class="fact"><span>Coursework</span><span>Probability and Stochastic Processes, Econometrics, Game Theory, DSA</span></div>
-      <div class="fact"><span>Now studying</span><span>Derivatives and Risk Management, ML for Economics</span></div>
-      <div class="fact"><span>Looking for</span><span>Quant trading, quant research and risk roles</span></div>
+    <div>
+      <div class="reveal">
+        <p class="big">Civil engineering taught me how systems fail. Economics made me ask <em>why people decide the way they do.</em> Data is how I test both.</p>
+        <p style="color:var(--muted);margin-top:22px">Away from the screen I run media teams, captain cultural contingents and shoot photos. That's where I learned to lead people and to find the one detail that makes a story click.</p>
+        <div class="toolkit">
+          <span>Python</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>statsmodels</span><span>scikit-learn</span><span>XGBoost</span><span>SQL</span><span>C++</span><span>Black-Scholes</span><span>Greeks</span><span>HAR</span><span>Newey-West</span><span>Google Earth Engine</span>
+        </div>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><span>Degree</span><span>B.Tech, Civil and Infrastructure Engg.</span></div>
+        <div class="fact"><span>Minor</span><span>Mathematical and Computational Economics</span></div>
+        <div class="fact"><span>Institute</span><span>IIT Jodhpur, 2023–2027</span></div>
+        <div class="fact"><span>Coursework</span><span>Probability and Stochastic Processes, Econometrics, Game Theory, DSA</span></div>
+        <div class="fact"><span>Now studying</span><span>Derivatives and Risk Management, ML for Economics</span></div>
+        <div class="fact"><span>Looking for</span><span>Quant trading, quant research and risk roles</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -192,7 +206,7 @@
   <div class="sec-head reveal"><div><span class="num">03 / BY THE NUMBERS</span><h2>Receipts, <em>not adjectives.</em></h2></div></div>
   <div class="stats reveal">
     <div class="stat"><b>78%</b><span>of days Nifty implied vol exceeded realised vol, 2020–26</span></div>
-    <div class="stat"><b>−38→−22%</b><span>max drawdown with a VIX-timed protective put</span></div>
+    <div class="stat"><b class="sm">−38→−22%</b><span>max drawdown with a VIX-timed protective put</span></div>
     <div class="stat"><b>0.905</b><span>AUC on unseen regions, spatially cross-validated</span></div>
     <div class="stat"><b>11th</b><span>overall, Inter IIT Tech Meet 13.0, quant team</span></div>
     <div class="stat"><b>4/159</b><span>teams, Fin Maverick VC Analyst case study</span></div>
@@ -216,29 +230,40 @@
 
 <section id="recognition">
   <div class="sec-head reveal"><div><span class="num">05 / RECOGNITION</span><h2>Learning, <em>on the record.</em></h2></div><p><a href="https://drive.google.com/drive/folders/1DF7dOJQuO5HEfbirFlYNqWcP8uMit14j?usp=sharing" target="_blank" rel="noopener" style="color:var(--accent)">All certificates ↗</a></p></div>
-  <div class="recog">
-    <a class="rc reveal" href="https://credsverse.com/credentials/fb394c24-68a1-429c-a0e9-6f4c06b3bbfe" target="_blank" rel="noopener"><span class="yr">2024</span><strong>Quantitative Finance Cohort '24</strong><span class="d">Stochastic calculus, options pricing, volatility models</span><span class="go">View credential ↗</span></a>
-    <a class="rc reveal" href="https://drive.google.com/file/d/1Ai9T4OmtH8CdrXAeMgB1MoSNol4ROZGu/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2024</span><strong>WorldQuant Challenge</strong><span class="d">Bronze level</span><span class="go">View certificate ↗</span></a>
-    <a class="rc reveal" href="https://drive.google.com/file/d/1OgtiTRjaguWNaxp2SFJDNibStaM4esqH/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2024</span><strong>IICPC Summer Camp</strong><span class="d">Competitive programming</span><span class="go">View certificate ↗</span></a>
-    <a class="rc reveal" href="https://drive.google.com/file/d/14cF2TTk1Kzqj_IvLtD4ZMzSbuDEJDora/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2020</span><strong>IOQM</strong><span class="d">Top 300 in Odisha</span><span class="go">View certificate ↗</span></a>
-    <div class="rc reveal"><span class="yr">2023</span><strong>JEE Main</strong><span class="d">Top 1% of 1.3 million candidates</span></div>
-    <div class="rc reveal"><span class="yr">2026</span><strong>GATE Civil Engineering</strong><span class="d">Qualified</span></div>
+  <div class="recog reveal">
+    <a class="rc" href="https://credsverse.com/credentials/fb394c24-68a1-429c-a0e9-6f4c06b3bbfe" target="_blank" rel="noopener"><span class="yr">2024</span><strong>Quantitative Finance Cohort '24</strong><span class="d">Stochastic calculus, options pricing, volatility models</span><span class="go">View credential ↗</span></a>
+    <a class="rc" href="https://drive.google.com/file/d/1Ai9T4OmtH8CdrXAeMgB1MoSNol4ROZGu/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2024</span><strong>WorldQuant Challenge</strong><span class="d">Bronze level</span><span class="go">View certificate ↗</span></a>
+    <a class="rc" href="https://drive.google.com/file/d/1OgtiTRjaguWNaxp2SFJDNibStaM4esqH/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2024</span><strong>IICPC Summer Camp</strong><span class="d">Competitive programming</span><span class="go">View certificate ↗</span></a>
+    <a class="rc" href="https://drive.google.com/file/d/14cF2TTk1Kzqj_IvLtD4ZMzSbuDEJDora/view?usp=sharing" target="_blank" rel="noopener"><span class="yr">2020</span><strong>IOQM</strong><span class="d">Top 300 in Odisha</span><span class="go">View certificate ↗</span></a>
+    <div class="rc"><span class="yr">2023</span><strong>JEE Main</strong><span class="d">Top 1% of 1.3 million candidates</span></div>
+    <div class="rc"><span class="yr">2026</span><strong>GATE Civil Engineering</strong><span class="d">Qualified</span></div>
   </div>
 </section>
 
 <section id="beyond">
   <div class="sec-head reveal"><div><span class="num">06 / BEYOND THE ANALYSIS</span><h2>Off <em>the clock.</em></h2></div><p>Photography, film, guitar, books, trails and the gym. <a href="life.html" style="color:var(--accent)">See the other half →</a></p></div>
-  <div class="mosaic reveal">
-    <a href="life.html#gallery"><img src="img/photos/peacock-display.jpg" alt="Peacock in full display" loading="lazy"></a>
-    <a href="life.html#gallery"><img src="img/photos/bird-liftoff.jpg" alt="Bird lifting off a branch at golden hour" loading="lazy"></a>
-    <a href="life.html#gallery"><img src="img/photos/sunset-valley.jpg" alt="Sunset over misty valleys" loading="lazy"></a>
-    <a href="life.html#gallery"><img src="img/photos/moon.jpg" alt="The moon, up close" loading="lazy"></a>
-    <a href="life.html#gallery"><img src="img/photos/bikaner.jpg" alt="Red sandstone building in Bikaner" loading="lazy"></a>
+  <div class="ring reveal" id="ring" data-cursor="Drag">
+    <div class="ring-in">
+      <a href="life.html#gallery" style="--i:0"><img src="img/thumbs/peacock-display.jpg" width="480" height="640" alt="Peacock in full display" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:1"><img src="img/thumbs/sunset-valley.jpg" width="480" height="640" alt="Sunset over misty mountain valleys" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:2"><img src="img/thumbs/street-gate.jpg" width="480" height="640" alt="Sardar Market gate in Jodhpur, a dog crossing the empty square" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:3"><img src="img/thumbs/bird-liftoff.jpg" width="480" height="640" alt="Bird lifting off a branch at golden hour" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:4"><img src="img/thumbs/camp-night.jpg" width="480" height="640" alt="Tents in a meadow under a night sky" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:5"><img src="img/thumbs/stepwell-splash.jpg" width="480" height="640" alt="A splash rising from the water of a stone stepwell" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:6"><img src="img/thumbs/hiker-peaks.jpg" width="480" height="640" alt="A lone hiker below a snow-streaked rock face" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:7"><img src="img/thumbs/fort-blue.jpg" width="480" height="640" alt="A sandstone fort above blue houses" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:8"><img src="img/thumbs/moon.jpg" width="480" height="640" alt="The moon, up close" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:9"><img src="img/thumbs/green-doors.jpg" width="480" height="640" alt="Open green doors framing a blue courtyard" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:10"><img src="img/thumbs/raptor-peaks.jpg" width="480" height="640" alt="A raptor gliding in front of a rocky peak" loading="lazy" draggable="false"></a>
+      <a href="life.html#gallery" style="--i:11"><img src="img/thumbs/tower-reflection.jpg" width="480" height="640" alt="A clock tower reflected upside down" loading="lazy" draggable="false"></a>
+    </div>
   </div>
+  <p class="ring-cap reveal"><span>Drag to spin</span><a href="life.html">27 frames in three chapters →</a></p>
 </section>
 </div>
 
 <section id="contact" class="contact">
+  <div class="floor" aria-hidden="true"></div>
   <div class="wrap reveal">
     <span class="num">07 / CONTACT</span>
     <h2>Let's <em>talk.</em></h2>
@@ -256,5 +281,6 @@
 <footer><div class="wrap"><span>© 2026 Subham Agrawal</span><span><a href="life.html">Off the clock</a> · <a href="#">Back to top ↑</a></span></div></footer>
 <script src="vendor/lenis.min.js"></script>
 <script src="main.js"></script>
+<script src="surface.js"></script>
 </body>
 </html>

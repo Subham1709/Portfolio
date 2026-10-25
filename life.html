@@ -8,7 +8,7 @@
 <script>!function(r){r.classList.add('js');try{var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t);if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&(sessionStorage.getItem('pt')||!sessionStorage.getItem('seen')))r.classList.add('cover');}catch(e){}setTimeout(function(){r.classList.remove('cover')},4000)}(document.documentElement)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-tag="Mountains, creatures and streets.">
@@ -27,17 +27,23 @@
     <div class="lh-media"><img src="img/hero-alpenglow.jpg" srcset="img/hero-alpenglow-1200.jpg 1200w, img/hero-alpenglow.jpg 2200w" sizes="100vw" alt="Pink alpenglow on a snow peak, framed by dark pines"></div>
     <span class="loc">Juda ka Talab · Kedarkantha trek</span>
     <div class="over">
-      <div class="eyebrow">The other half</div>
+      <div class="eyebrow rise" style="--dl:.5s">The other half</div>
       <h1>Off <em>the clock.</em></h1>
-      <p>Days go to data and markets. The rest goes to a camera, a guitar, a book, a trail or the gym.</p>
-      <a class="cue" href="#gallery">Scroll <span>↓</span></a>
+      <p class="rise" style="--dl:.9s">Days go to data and markets. The rest goes to a camera, a guitar, a book, a trail or the gym.</p>
+      <a class="cue rise" style="--dl:1.1s" href="#gallery">Scroll <span>↓</span></a>
     </div>
   </header>
 
-  <div class="marquee" aria-hidden="true"><div class="track">
-    <span>Kedarkantha</span><span>✳</span><span>Juda ka Talab</span><span>✳</span><span>Jawai</span><span>✳</span><span>Osian</span><span>✳</span><span>Bikaner</span><span>✳</span><span>Old Jodhpur</span><span>✳</span>
-    <span>Kedarkantha</span><span>✳</span><span>Juda ka Talab</span><span>✳</span><span>Jawai</span><span>✳</span><span>Osian</span><span>✳</span><span>Bikaner</span><span>✳</span><span>Old Jodhpur</span><span>✳</span>
-  </div></div>
+  <div class="ribbons" aria-hidden="true">
+    <div class="marquee r2"><div class="track">
+      <span>Mountains</span><span>✳</span><span>Creatures</span><span>✳</span><span>Streets</span><span>✳</span><span>Golden hour</span><span>✳</span><span>Night sky</span><span>✳</span>
+      <span>Mountains</span><span>✳</span><span>Creatures</span><span>✳</span><span>Streets</span><span>✳</span><span>Golden hour</span><span>✳</span><span>Night sky</span><span>✳</span>
+    </div></div>
+    <div class="marquee r1"><div class="track">
+      <span>Kedarkantha</span><span>✳</span><span>Juda ka Talab</span><span>✳</span><span>Jawai</span><span>✳</span><span>Osian</span><span>✳</span><span>Bikaner</span><span>✳</span><span>Old Jodhpur</span><span>✳</span>
+      <span>Kedarkantha</span><span>✳</span><span>Juda ka Talab</span><span>✳</span><span>Jawai</span><span>✳</span><span>Osian</span><span>✳</span><span>Bikaner</span><span>✳</span><span>Old Jodhpur</span><span>✳</span>
+    </div></div>
+  </div>
 
   <section id="gallery">
     <div class="wrap">
@@ -96,21 +102,21 @@
 
   <section id="into"><div class="wrap">
     <div class="sec-head reveal"><div><span class="num">02 / WHAT I'M INTO</span><h2>The rest of <em>the week.</em></h2></div></div>
-    <div class="hobbies">
-      <div class="hobby reveal"><div class="ico">📷</div><h3>Photography</h3><p>Wildlife, landscapes and street. I edit everything myself.</p><span class="now">Always carrying one</span></div>
-      <div class="hobby reveal"><div class="ico">🎸</div><h3>Fingerstyle guitar</h3><p>One arrangement at a time, slowly and properly.</p><span class="now">Learning</span></div>
-      <div class="hobby reveal"><div class="ico">📚</div><h3>Books</h3><p><em>The Count of Monte Cristo</em>, a few pages every night before lights out.</p><span class="now">Reading now</span></div>
-      <div class="hobby reveal"><div class="ico">🏃</div><h3>Gym and running</h3><p>Early-morning gym and tennis, building up to a steady 5k.</p><span class="now">Training</span></div>
-      <div class="hobby reveal"><div class="ico">⛰️</div><h3>Treks and travel</h3><p>Kedarkantha, leopard country in Jawai, the temples of Osian. Always with a camera.</p><span class="now">Exploring</span></div>
-      <div class="hobby reveal"><div class="ico">🎤</div><h3>Stage and comedy</h3><p>Cultural Captain for Speaking and Comedic Arts at two Inter IIT Cultural Meets.</p><span class="now">On stage</span></div>
+    <div class="hobbies reveal">
+      <div class="hobby"><div class="ico">📷</div><h3>Photography</h3><p>Wildlife, landscapes and street. I edit everything myself.</p><span class="now">Always carrying one</span></div>
+      <div class="hobby"><div class="ico">🎸</div><h3>Fingerstyle guitar</h3><p>One arrangement at a time, slowly and properly.</p><span class="now">Learning</span></div>
+      <div class="hobby"><div class="ico">📚</div><h3>Books</h3><p><em>The Count of Monte Cristo</em>, a few pages every night before lights out.</p><span class="now">Reading now</span></div>
+      <div class="hobby"><div class="ico">🏃</div><h3>Gym and running</h3><p>Early-morning gym and tennis, building up to a steady 5k.</p><span class="now">Training</span></div>
+      <div class="hobby"><div class="ico">⛰️</div><h3>Treks and travel</h3><p>Kedarkantha, leopard country in Jawai, the temples of Osian. Always with a camera.</p><span class="now">Exploring</span></div>
+      <div class="hobby"><div class="ico">🎤</div><h3>Stage and comedy</h3><p>Cultural Captain for Speaking and Comedic Arts at two Inter IIT Cultural Meets.</p><span class="now">On stage</span></div>
     </div>
   </div></section>
 
   <section class="next"><div class="wrap">
-    <a class="next-panel reveal" href="index.html#work">
+    <div class="reveal"><a class="next-panel" href="index.html#work">
       <span class="np-img"><img src="img/proj-hedge.png" alt="" loading="lazy"></span>
       <span class="np-txt"><span class="num">NEXT</span><span class="np-h">Back to <em>the work.</em></span><span class="np-go">Selected projects →</span></span>
-    </a>
+    </a></div>
     <p class="np-alt reveal"><a class="btn" href="https://www.instagram.com/subham_.snaps" target="_blank" rel="noopener">More photos on Instagram ↗</a></p>
   </div></section>
 </main>
