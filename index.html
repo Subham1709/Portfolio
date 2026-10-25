@@ -56,7 +56,7 @@
 <section id="work">
   <div class="sec-head reveal">
     <div><span class="num">01 / SELECTED WORK</span><h2>Things I've <em>built and tested.</em></h2></div>
-    <p>Four projects, each with a number I can defend in an interview.</p>
+    <p>Seven projects, each with a number I can defend in an interview.</p>
   </div>
 
   <div class="projects">
@@ -72,6 +72,51 @@
         </ul>
         <div class="chips"><span class="chip">PyTorch</span><span class="chip">Heston</span><span class="chip">Monte Carlo</span><span class="chip">CVaR</span></div>
         <div class="p-links"><a href="https://subham-deep-hedging.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Deep-Hedging-of-Options" target="_blank" rel="noopener">Code ↗</a></div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-img"><span class="tag-float">DERIVATIVES PRICING · 2026</span><img src="img/proj-heston.png" alt="Heston model fitted to the SPX implied volatility smile at six expiries from 16 to 465 days" loading="lazy"></div>
+      <div>
+        <div class="p-meta">Independent project · after Heston (1993)</div>
+        <h3>Heston Pricing Engine</h3>
+        <ul>
+          <li>Built the Heston stochastic volatility model from scratch with <b>three independent pricing families</b> (Fourier, Monte Carlo, PDE with ADI), each checked against the others and published benchmarks.</li>
+          <li>The COS method prices to 8e-8 in <b>0.15 ms</b>, about 10,000x faster than Monte Carlo; Andersen's QE scheme removes Euler's variance bias.</li>
+          <li>Calibrated to <b>1,880 real SPX quotes</b> across 13 expiries with 0.90 vol points RMSE, and showed where the model fails: the steep skew of short-dated options.</li>
+        </ul>
+        <div class="chips"><span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">Fourier pricing</span><span class="chip">Finite differences</span></div>
+        <div class="p-links"><a href="https://subham-heston-engine.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Heston_Pricing_Engine" target="_blank" rel="noopener">Code ↗</a></div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-img"><span class="tag-float">ML · EQUITIES · 2026</span><img src="img/proj-nifty.png" alt="Equity curves of a LightGBM long-short Nifty 100 strategy under naive, purged and walk-forward validation" loading="lazy"></div>
+      <div>
+        <div class="p-meta">Independent project · after López de Prado (2018)</div>
+        <h3>Nifty ML Alpha: Does the Backtest Leak?</h3>
+        <ul>
+          <li>Ranked 98 Nifty 100 stocks by next-month return with LightGBM and ridge on 15 price and volume features, 2010–2026, as a long-short portfolio net of 15 bps costs.</li>
+          <li>Shuffled K-fold inflated the Sharpe ratio about <b>7x (3.68 vs 0.53)</b>; purged, embargoed K-fold and walk-forward agree on the honest number.</li>
+          <li>A placebo on random-walk stocks proved it: naive K-fold found a <b>Sharpe of 5 in pure noise</b>, the leak-free methods found nothing. Out of sample the simple ridge model won.</li>
+        </ul>
+        <div class="chips"><span class="chip">LightGBM</span><span class="chip">Purged CV</span><span class="chip">Walk-forward</span><span class="chip">Backtesting</span></div>
+        <div class="p-links"><a href="https://subham-nifty-ml-alpha.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Nifty_ML_Alpha" target="_blank" rel="noopener">Code ↗</a></div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-img"><span class="tag-float">DEEP LEARNING · MICROSTRUCTURE · 2026</span><img src="img/proj-deeplob.png" alt="Cumulative net profit of DeepLOB predictions on Bitcoin at fees from 0 to 10 basis points: positive only without fees" loading="lazy"></div>
+      <div>
+        <div class="p-meta">Independent project · after Zhang, Zohren &amp; Roberts, <i>DeepLOB</i> (2019)</div>
+        <h3>DeepLOB: Price Moves from the Order Book</h3>
+        <ul>
+          <li>Implemented DeepLOB in PyTorch and trained it on <b>BTC and ETH order books I recorded from Binance</b> every 100 ms, against logistic regression and LightGBM.</li>
+          <li>DeepLOB was the best model (macro F1 <b>0.54</b> at 10 s vs 0.33 chance), but a fee-aware backtest showed it breaks even only below <b>0.7 bp</b> per side, against a 10 bp taker fee.</li>
+          <li>Found that the FI-2010 benchmark's labels leak: 8 past returns alone nearly match the published scores. Exported to ONNX at 0.8 ms per prediction.</li>
+        </ul>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">LightGBM</span><span class="chip">WebSocket data</span><span class="chip">ONNX</span></div>
+        <div class="p-links"><a href="https://subham-deeplob.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/DeepLOB" target="_blank" rel="noopener">Code ↗</a></div>
       </div>
     </article>
 
