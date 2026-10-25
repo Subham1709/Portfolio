@@ -9,5 +9,6 @@ Static site on Vercel (auto-deploys on every push to `main`).
 - Look: dark by default (light via the toggle), lime accent, Space Grotesk headings with Instrument Serif italics. Colours are tokens at the top of `style.css`.
 - Motion lives in `main.js` and the `/* motion */` block of `style.css`: first-visit preloader, page curtain (the page tips back as it leaves), smooth scroll (`vendor/lenis.min.js`, MIT), headline words that flip up in 3D, image wipes, count-up numbers, project cards that stack in 3D on tall screens, cards that tilt toward the pointer, a cursor ring, the photo ring on the home page and the pinned filmstrip that rolls round a drum. All of it switches off for visitors who ask for reduced motion.
 - `surface.js` draws the home hero: a WebGL implied-vol surface (illustrative, not market data) that follows the pointer. Without WebGL the hero falls back to plain gradients.
+- Logo: a σ (volatility) mark on a lime tile plus the name, in the nav, preloader and page curtain (`MARK` in `main.js`). `favicon.svg` and `apple-touch-icon.png` are the same mark.
 - The home page photo ring uses 480×640 crops in `img/thumbs/`.
 - Update the resume: replace `Subham_Agrawal_Resume.pdf`.
