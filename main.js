@@ -328,7 +328,7 @@
     els.forEach(function(el){io.observe(el);});
     if(reduce)return;
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);co.unobserve(e.target);}});},{threshold:.6});
-    all('.stat b,.project li b,.p-type .big').forEach(function(el){co.observe(el);});
+    all('.stat b,.project li b').forEach(function(el){co.observe(el);});
   }
 
   // Intro: a short preloader on the first visit, a curtain after moving between pages.
