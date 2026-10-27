@@ -6,6 +6,7 @@
 <title>Off the Clock · Subham Agrawal</title>
 <meta name="description" content="Subham Agrawal off the clock: photography, film, guitar, books, treks, travel and running.">
 <script>!function(r){r.classList.add('js');try{var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t);if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&(sessionStorage.getItem('pt')||!sessionStorage.getItem('seen')))r.classList.add('cover');}catch(e){}setTimeout(function(){r.classList.remove('cover')},4000)}(document.documentElement)</script>
+<meta name="theme-color" content="#07080a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -21,13 +22,29 @@
     <a href="index.html">Work</a>
     <a href="#gallery">Photos</a>
     <a href="#into" class="hide-md">What I'm into</a>
+    <a href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener" class="pill">Resume ↗</a>
     <button id="theme" aria-label="Toggle dark mode">☾</button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="msheet"><span></span><span></span></button>
   </div>
 </div></nav>
+<div class="msheet" id="msheet" aria-hidden="true">
+  <div class="wrap ms-in">
+    <ol class="ms-links">
+      <li style="--i:0"><a href="#gallery"><span>01</span>Photos</a></li>
+      <li style="--i:1"><a href="#into"><span>02</span>What I'm <em>into</em></a></li>
+      <li style="--i:2"><a href="index.html#work"><span>03</span>Work</a></li>
+      <li style="--i:3"><a href="index.html#contact"><span>04</span>Contact</a></li>
+    </ol>
+    <div class="ms-foot">
+      <a class="btn primary" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      <a class="btn" href="https://www.instagram.com/subham_.snaps" target="_blank" rel="noopener">Instagram ↗</a>
+    </div>
+  </div>
+</div>
 
 <main>
   <header class="life-hero" data-intro>
-    <div class="lh-media"><img src="img/hero-alpenglow.jpg" srcset="img/hero-alpenglow-1200.jpg 1200w, img/hero-alpenglow.jpg 2200w" sizes="100vw" alt="Pink alpenglow on a snow peak, framed by dark pines"></div>
+    <div class="lh-media"><picture><source media="(max-aspect-ratio: 4/5)" srcset="img/hero-alpenglow-tall.jpg"><img src="img/hero-alpenglow.jpg" srcset="img/hero-alpenglow-1200.jpg 1200w, img/hero-alpenglow.jpg 2200w" sizes="100vw" alt="Pink alpenglow on a snow peak, framed by dark pines"></picture></div>
     <span class="loc">Juda ka Talab · Kedarkantha trek</span>
     <div class="over">
       <div class="eyebrow rise" style="--dl:.5s">The other half</div>
@@ -52,9 +69,9 @@
     <div class="wrap">
       <div class="sec-head reveal"><div><span class="num">01 / THROUGH MY LENS</span><h2>Photography <em>and film.</em></h2></div><p>The camera taught me to notice things: birds, big skies, old buildings. Every frame here is my own. I also ran media for Prometeo '26, where several reels crossed 500k views, and mentored 50+ students at Frame-X. <a href="https://www.instagram.com/subham_.snaps" target="_blank" rel="noopener" style="color:var(--accent)">More on Instagram ↗</a></p></div>
       <div class="pillars reveal">
-        <a class="pillar" href="#ch-mountains"><img src="img/photos/hiker-peaks.jpg" alt="" loading="lazy"><span class="pl-n">01</span><span class="pl-t">Mountains <em>and skies</em></span><span class="pl-c">10 frames</span></a>
-        <a class="pillar" href="#ch-creatures"><img src="img/photos/peacock-display.jpg" alt="" loading="lazy"><span class="pl-n">02</span><span class="pl-t">Creatures</span><span class="pl-c">5 frames</span></a>
-        <a class="pillar" href="#ch-streets"><img src="img/photos/street-gate.jpg" alt="" loading="lazy"><span class="pl-n">03</span><span class="pl-t">Streets</span><span class="pl-c">12 frames</span></a>
+        <a class="pillar" href="#ch-mountains"><picture><source media="(max-width: 760px)" srcset="img/photos/m/hiker-peaks.webp" type="image/webp"><img src="img/photos/hiker-peaks.jpg" alt="" loading="lazy"></picture><span class="pl-n">01</span><span class="pl-t">Mountains <em>and skies</em></span><span class="pl-c">10 frames</span></a>
+        <a class="pillar" href="#ch-creatures"><picture><source media="(max-width: 760px)" srcset="img/photos/m/peacock-display.webp" type="image/webp"><img src="img/photos/peacock-display.jpg" alt="" loading="lazy"></picture><span class="pl-n">02</span><span class="pl-t">Creatures</span><span class="pl-c">5 frames</span></a>
+        <a class="pillar" href="#ch-streets"><picture><source media="(max-width: 760px)" srcset="img/photos/m/street-gate.webp" type="image/webp"><img src="img/photos/street-gate.jpg" alt="" loading="lazy"></picture><span class="pl-n">03</span><span class="pl-t">Streets</span><span class="pl-c">12 frames</span></a>
       </div>
     </div>
 
@@ -62,42 +79,43 @@
       <div class="film-pin">
         <div class="gallery film-track">
           <div class="ch-card reveal" id="ch-mountains" data-ch="Mountains and skies"><span class="num">01 / 03</span><h3>Mountains <em>and skies.</em></h3><p>The Kedarkantha trek and a solo trip into the high country.</p></div>
-          <figure><img src="img/photos/snow-ridge.jpg" width="1119" height="1400" alt="Snow-dusted mountain ridge against a clear blue sky" loading="lazy"><figcaption>Fresh snow on the ridge</figcaption></figure>
-          <figure><img src="img/photos/camp-night.jpg" width="1400" height="933" alt="Yellow tents in a meadow under a night sky, pines behind" loading="lazy"><figcaption>Base camp at night, Kedarkantha</figcaption></figure>
-          <figure><img src="img/photos/hiker-peaks.jpg" width="1120" height="1400" alt="A lone hiker walking below a huge snow-streaked rock face" loading="lazy"><figcaption>Below the peaks, solo trip</figcaption></figure>
-          <figure><img src="img/photos/sunset-valley.jpg" width="1280" height="960" alt="Orange and pink clouds at sunset over misty mountain valleys" loading="lazy"><figcaption>Sunset over the valleys</figcaption></figure>
-          <figure><img src="img/photos/cairns.jpg" width="960" height="1280" alt="Stacked stone cairns on a rock ledge, snow peaks and clouds behind" loading="lazy"><figcaption>Cairns above the clouds</figcaption></figure>
-          <figure><img src="img/photos/taking-it-in.jpg" width="1400" height="1050" alt="A trekker sitting on a rock, looking out at a mountain range at golden hour" loading="lazy"><figcaption>Taking in the range</figcaption></figure>
-          <figure><img src="img/photos/forest.jpg" width="1047" height="1400" alt="Tall pines and a lone figure on a forest trail" loading="lazy"><figcaption>Into the pines</figcaption></figure>
-          <figure><img src="img/photos/clouds-range.jpg" width="1400" height="787" alt="Clouds rolling over a mountain range above a hill town" loading="lazy"><figcaption>Clouds over the range</figcaption></figure>
-          <figure><img src="img/photos/climb-dog.jpg" width="1079" height="807" alt="Silhouette of a hiker and a dog climbing a slope at sunset" loading="lazy"><figcaption>Sunset climb, with company</figcaption></figure>
-          <figure><img src="img/photos/moon.jpg" width="838" height="838" alt="Close-up of the moon showing craters along the terminator" loading="lazy"><figcaption>The moon, up close</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/snow-ridge.webp" type="image/webp"><img src="img/photos/snow-ridge.jpg" width="1119" height="1400" alt="Snow-dusted mountain ridge against a clear blue sky" loading="lazy"></picture></div><figcaption>Fresh snow on the ridge</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/camp-night.webp" type="image/webp"><img src="img/photos/camp-night.jpg" width="1400" height="933" alt="Yellow tents in a meadow under a night sky, pines behind" loading="lazy"></picture></div><figcaption>Base camp at night, Kedarkantha</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/hiker-peaks.webp" type="image/webp"><img src="img/photos/hiker-peaks.jpg" width="1120" height="1400" alt="A lone hiker walking below a huge snow-streaked rock face" loading="lazy"></picture></div><figcaption>Below the peaks, solo trip</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/sunset-valley.webp" type="image/webp"><img src="img/photos/sunset-valley.jpg" width="1280" height="960" alt="Orange and pink clouds at sunset over misty mountain valleys" loading="lazy"></picture></div><figcaption>Sunset over the valleys</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/cairns.webp" type="image/webp"><img src="img/photos/cairns.jpg" width="960" height="1280" alt="Stacked stone cairns on a rock ledge, snow peaks and clouds behind" loading="lazy"></picture></div><figcaption>Cairns above the clouds</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/taking-it-in.webp" type="image/webp"><img src="img/photos/taking-it-in.jpg" width="1400" height="1050" alt="A trekker sitting on a rock, looking out at a mountain range at golden hour" loading="lazy"></picture></div><figcaption>Taking in the range</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/forest.webp" type="image/webp"><img src="img/photos/forest.jpg" width="1047" height="1400" alt="Tall pines and a lone figure on a forest trail" loading="lazy"></picture></div><figcaption>Into the pines</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/clouds-range.webp" type="image/webp"><img src="img/photos/clouds-range.jpg" width="1400" height="787" alt="Clouds rolling over a mountain range above a hill town" loading="lazy"></picture></div><figcaption>Clouds over the range</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/climb-dog.webp" type="image/webp"><img src="img/photos/climb-dog.jpg" width="1079" height="807" alt="Silhouette of a hiker and a dog climbing a slope at sunset" loading="lazy"></picture></div><figcaption>Sunset climb, with company</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/moon.webp" type="image/webp"><img src="img/photos/moon.jpg" width="838" height="838" alt="Close-up of the moon showing craters along the terminator" loading="lazy"></picture></div><figcaption>The moon, up close</figcaption></figure>
 
           <div class="ch-card reveal" id="ch-creatures" data-ch="Creatures"><span class="num">02 / 03</span><h3>Creatures.</h3><p>Birds at golden hour, a raptor on the wind and the dogs that adopt every trip.</p></div>
-          <figure><img src="img/photos/bird-liftoff.jpg" width="1400" height="933" alt="Bird silhouette lifting off a thorny branch against a golden sky" loading="lazy"><figcaption>Lift-off</figcaption></figure>
-          <figure><img src="img/photos/peacock-display.jpg" width="1400" height="1119" alt="Peacock with its tail fanned out in full display" loading="lazy"><figcaption>Peacock in full display</figcaption></figure>
-          <figure><img src="img/photos/raptor-peaks.jpg" width="1400" height="786" alt="A raptor gliding in front of a snow-streaked rocky peak" loading="lazy"><figcaption>Raptor below the snowline, solo trip</figcaption></figure>
-          <figure><img src="img/photos/dog-asleep.jpg" width="1400" height="933" alt="Golden dog curled up asleep on the grass" loading="lazy"><figcaption>Camp dog, off duty, Juda ka Talab</figcaption></figure>
-          <figure><img src="img/photos/roof-dog.jpg" width="1400" height="933" alt="A street dog standing on a blue rooftop under a tree" loading="lazy"><figcaption>Lookout on the roof, Jodhpur</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/bird-liftoff.webp" type="image/webp"><img src="img/photos/bird-liftoff.jpg" width="1400" height="933" alt="Bird silhouette lifting off a thorny branch against a golden sky" loading="lazy"></picture></div><figcaption>Lift-off</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/peacock-display.webp" type="image/webp"><img src="img/photos/peacock-display.jpg" width="1400" height="1119" alt="Peacock with its tail fanned out in full display" loading="lazy"></picture></div><figcaption>Peacock in full display</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/raptor-peaks.webp" type="image/webp"><img src="img/photos/raptor-peaks.jpg" width="1400" height="786" alt="A raptor gliding in front of a snow-streaked rocky peak" loading="lazy"></picture></div><figcaption>Raptor below the snowline, solo trip</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/dog-asleep.webp" type="image/webp"><img src="img/photos/dog-asleep.jpg" width="1400" height="933" alt="Golden dog curled up asleep on the grass" loading="lazy"></picture></div><figcaption>Camp dog, off duty, Juda ka Talab</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/roof-dog.webp" type="image/webp"><img src="img/photos/roof-dog.jpg" width="1400" height="933" alt="A street dog standing on a blue rooftop under a tree" loading="lazy"></picture></div><figcaption>Lookout on the roof, Jodhpur</figcaption></figure>
 
           <div class="ch-card reveal" id="ch-streets" data-ch="Streets"><span class="num">03 / 03</span><h3>Streets.</h3><p>Bikaner, temples, festivals, and a Fujifilm photowalk through old Jodhpur on an X-T5.</p></div>
-          <figure><img src="img/photos/street-gate.jpg" width="933" height="1400" alt="Sardar Market gate in pink sandstone, a dog crossing the empty square" loading="lazy"><figcaption>Sardar Market gate, Jodhpur</figcaption></figure>
-          <figure><img src="img/photos/fort-blue.jpg" width="1400" height="933" alt="A sandstone fort on a ridge above blue houses" loading="lazy"><figcaption>The fort above the blue houses</figcaption></figure>
-          <figure><img src="img/photos/tower-reflection.jpg" width="933" height="1400" alt="A clock tower reflected upside down in a dark glossy surface held up to the sky" loading="lazy"><figcaption>Clock tower, reflected</figcaption></figure>
-          <figure><img src="img/photos/green-doors.jpg" width="1400" height="933" alt="Open green metal doors framing a pale blue courtyard" loading="lazy"><figcaption>Green doors, blue courtyard</figcaption></figure>
-          <figure><img src="img/photos/stepwell-splash.jpg" width="933" height="1400" alt="A tall splash rising from the green water of a stone stepwell" loading="lazy"><figcaption>Splash at the stepwell</figcaption></figure>
-          <figure><img src="img/photos/clock-tower.jpg" width="1400" height="788" alt="Red brick clock tower and a long building in warm evening light" loading="lazy"><figcaption>Clock tower, late light</figcaption></figure>
-          <figure><img src="img/photos/water-stop.jpg" width="933" height="1400" alt="A man drinking at an old stone water stop with a carved lattice wall" loading="lazy"><figcaption>Water stop, old city</figcaption></figure>
-          <figure><img src="img/photos/pandal.jpg" width="1305" height="1232" alt="Ganesh idol inside a pandal decorated with marigolds" loading="lazy"><figcaption>Ganpati pandal at night</figcaption></figure>
-          <figure><img src="img/photos/arch.jpg" width="933" height="1400" alt="A dark stone arch framing a sunlit street and a tree" loading="lazy"><figcaption>Through the arch</figcaption></figure>
-          <figure><img src="img/photos/bikaner.jpg" width="1120" height="1400" alt="Red sandstone building with carved balconies, seen from below" loading="lazy"><figcaption>Postcards from Bikaner</figcaption></figure>
-          <figure><img src="img/photos/grille-courtyard.jpg" width="933" height="1400" alt="A courtyard of stone statues seen through an iron grille, a pigeon on the flagstones" loading="lazy"><figcaption>Courtyard through the grille</figcaption></figure>
-          <figure><img src="img/photos/temple.jpg" width="1050" height="1400" alt="Temple spires against a pale blue sky" loading="lazy"><figcaption>Temple spires</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/street-gate.webp" type="image/webp"><img src="img/photos/street-gate.jpg" width="933" height="1400" alt="Sardar Market gate in pink sandstone, a dog crossing the empty square" loading="lazy"></picture></div><figcaption>Sardar Market gate, Jodhpur</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/fort-blue.webp" type="image/webp"><img src="img/photos/fort-blue.jpg" width="1400" height="933" alt="A sandstone fort on a ridge above blue houses" loading="lazy"></picture></div><figcaption>The fort above the blue houses</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/tower-reflection.webp" type="image/webp"><img src="img/photos/tower-reflection.jpg" width="933" height="1400" alt="A clock tower reflected upside down in a dark glossy surface held up to the sky" loading="lazy"></picture></div><figcaption>Clock tower, reflected</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/green-doors.webp" type="image/webp"><img src="img/photos/green-doors.jpg" width="1400" height="933" alt="Open green metal doors framing a pale blue courtyard" loading="lazy"></picture></div><figcaption>Green doors, blue courtyard</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/stepwell-splash.webp" type="image/webp"><img src="img/photos/stepwell-splash.jpg" width="933" height="1400" alt="A tall splash rising from the green water of a stone stepwell" loading="lazy"></picture></div><figcaption>Splash at the stepwell</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/clock-tower.webp" type="image/webp"><img src="img/photos/clock-tower.jpg" width="1400" height="788" alt="Red brick clock tower and a long building in warm evening light" loading="lazy"></picture></div><figcaption>Clock tower, late light</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/water-stop.webp" type="image/webp"><img src="img/photos/water-stop.jpg" width="933" height="1400" alt="A man drinking at an old stone water stop with a carved lattice wall" loading="lazy"></picture></div><figcaption>Water stop, old city</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/pandal.webp" type="image/webp"><img src="img/photos/pandal.jpg" width="1305" height="1232" alt="Ganesh idol inside a pandal decorated with marigolds" loading="lazy"></picture></div><figcaption>Ganpati pandal at night</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/arch.webp" type="image/webp"><img src="img/photos/arch.jpg" width="933" height="1400" alt="A dark stone arch framing a sunlit street and a tree" loading="lazy"></picture></div><figcaption>Through the arch</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/bikaner.webp" type="image/webp"><img src="img/photos/bikaner.jpg" width="1120" height="1400" alt="Red sandstone building with carved balconies, seen from below" loading="lazy"></picture></div><figcaption>Postcards from Bikaner</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/grille-courtyard.webp" type="image/webp"><img src="img/photos/grille-courtyard.jpg" width="933" height="1400" alt="A courtyard of stone statues seen through an iron grille, a pigeon on the flagstones" loading="lazy"></picture></div><figcaption>Courtyard through the grille</figcaption></figure>
+          <figure><div class="fx"><picture><source media="(max-width: 760px)" srcset="img/photos/m/temple.webp" type="image/webp"><img src="img/photos/temple.jpg" width="1050" height="1400" alt="Temple spires against a pale blue sky" loading="lazy"></picture></div><figcaption>Temple spires</figcaption></figure>
         </div>
         <div class="film-hud" aria-hidden="true">
           <div class="hud-l"><span class="hud-ch">Mountains and skies</span><span class="hud-cap">Fresh snow on the ridge</span></div>
           <div class="hud-n"><b>01</b> / 27</div>
           <i class="hud-bar"><i></i></i>
+          <span class="swipe-hint">Swipe <i>→</i></span>
         </div>
       </div>
     </div>

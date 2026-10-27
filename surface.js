@@ -6,6 +6,8 @@
   if(!cv)return;
   var d=document,r=d.documentElement,w=window;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Phones draw fewer pixels and frames: the surface moves slowly, so 30 fps looks the same and saves battery.
+  var coarse=matchMedia('(pointer:coarse)').matches;
   var gl=null;
   try{gl=cv.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:true});}catch(e){}
   if(!gl){r.classList.add('no-gl');return;}
@@ -79,7 +81,7 @@
 
   var host=cv.parentNode,W=0,H=0,mx=0,my=0,tmx=0,tmy=0,time=0,last=0,vis=true,raf=0;
   function size(){
-    var dpr=Math.min(w.devicePixelRatio||1,1.75),cw=cv.clientWidth,ch=cv.clientHeight;
+    var dpr=Math.min(w.devicePixelRatio||1,coarse?1.5:1.75),cw=cv.clientWidth,ch=cv.clientHeight;
     if(cw*dpr!==W||ch*dpr!==H){W=cv.width=Math.round(cw*dpr);H=cv.height=Math.round(ch*dpr);gl.viewport(0,0,W,H);}
   }
   function draw(){
@@ -111,9 +113,11 @@
   }
   function loop(ts){
     raf=0;
-    var dt=last?Math.min((ts-last)/1000,.05):0;last=ts;
-    time+=dt;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
-    draw();
+    if(!(coarse&&last&&ts-last<30)){
+      var dt=last?Math.min((ts-last)/1000,.05):0;last=ts;
+      time+=dt;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
+      draw();
+    }
     if(vis&&!d.hidden)raf=requestAnimationFrame(loop);
   }
   function go(){if(!raf&&!reduce&&vis&&!d.hidden){last=0;raf=requestAnimationFrame(loop);}}

@@ -9,6 +9,7 @@
 <meta property="og:description" content="Markets, models, and the story in the data.">
 <meta property="og:image" content="img/portrait.jpg">
 <script>!function(r){r.classList.add('js');try{var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t);if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&(sessionStorage.getItem('pt')||!sessionStorage.getItem('seen')))r.classList.add('cover');}catch(e){}setTimeout(function(){r.classList.remove('cover')},4000)}(document.documentElement)</script>
+<meta name="theme-color" content="#07080a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -25,10 +26,28 @@
     <a href="#about" class="hide-md">About</a>
     <a href="#journey" class="hide-md">Journey</a>
     <a href="life.html">Off the clock</a>
-    <a href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener" class="pill hide-md">Resume ↗</a>
+    <a href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener" class="pill">Resume ↗</a>
     <button id="theme" aria-label="Toggle dark mode">☾</button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="msheet"><span></span><span></span></button>
   </div>
 </div></nav>
+<div class="msheet" id="msheet" aria-hidden="true">
+  <div class="wrap ms-in">
+    <ol class="ms-links">
+      <li style="--i:0"><a href="#work"><span>01</span>Work</a></li>
+      <li style="--i:1"><a href="#about"><span>02</span>About</a></li>
+      <li style="--i:2"><a href="#journey"><span>03</span>Journey</a></li>
+      <li style="--i:3"><a href="#recognition"><span>04</span>Recognition</a></li>
+      <li style="--i:4"><a href="life.html"><span>05</span>Off <em>the clock</em></a></li>
+      <li style="--i:5"><a href="#contact"><span>06</span>Contact</a></li>
+    </ol>
+    <div class="ms-foot">
+      <a class="btn primary" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      <a class="btn" href="mailto:b23ci1038@iitj.ac.in">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/subham-agrawal-5b924128a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</div>
 
 <main>
 <header class="hero" data-intro>

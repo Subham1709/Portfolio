@@ -10,7 +10,8 @@
   // Theme toggle. Dark is the default; the saved theme is applied early by the inline script in <head>.
   var t=d.getElementById('theme');
   function isDark(){return r.getAttribute('data-theme')!=='light';}
-  function icon(){if(t)t.textContent=isDark()?'☀':'☾';}
+  var tc=d.querySelector('meta[name="theme-color"]');
+  function icon(){if(t)t.textContent=isDark()?'☀':'☾';if(tc)tc.content=isDark()?'#07080a':'#f1f0ea';}
   icon();
   if(t)t.addEventListener('click',function(){
     var n=isDark()?'light':'dark';r.setAttribute('data-theme',n);icon();
@@ -30,6 +31,12 @@
     if(h==='#'){e.preventDefault();scrollToY(0);return;}
     var el=d.getElementById(h.slice(1));if(!el)return;
     e.preventDefault();
+    if(F&&F.sw&&el.classList.contains('ch-card')){
+      scrollToY(film.getBoundingClientRect().top+w.scrollY-(nav?nav.offsetHeight:0));
+      // The strip is still off screen while the page scrolls, so it can jump straight there.
+      F.track.scrollLeft=el.offsetLeft-(F.track.clientWidth-el.offsetWidth)/2;
+      return;
+    }
     scrollToY(el.dataset.y?+el.dataset.y:el.getBoundingClientRect().top+w.scrollY);
     try{history.replaceState(null,'',h);}catch(err){}
   });
@@ -228,41 +235,56 @@
   // Filmstrip: scrolling down rolls the photos sideways round a drum.
   var film=d.getElementById('film'),F=null;
   if(film&&!reduce){
-    film.classList.add('on');
     var track=film.querySelector('.film-track'),ch='';
     F={pin:film.querySelector('.film-pin'),track:track,figs:[],cards:all('.ch-card',track),
        n:film.querySelector('.hud-n b'),cap:film.querySelector('.hud-cap'),chl:film.querySelector('.hud-ch'),bar:film.querySelector('.hud-bar'),act:-1};
     [].forEach.call(track.children,function(c){
       if(c.classList.contains('ch-card')){ch=c.getAttribute('data-ch');return;}
-      if(c.tagName==='FIGURE')F.figs.push({el:c,img:c.querySelector('img'),ch:ch,cap:c.querySelector('figcaption').textContent});
+      if(c.tagName==='FIGURE')F.figs.push({el:c,fx:c.querySelector('.fx'),img:c.querySelector('img'),ch:ch,cap:c.querySelector('figcaption').textContent});
     });
     F.items=F.figs.map(function(f){return f;}).concat(F.cards.map(function(c){return {el:c,card:true};}));
     F.n.nextSibling.textContent=' / '+pad(F.figs.length);
+    F.track.addEventListener('scroll',function(){if(F.sw){F.dirty=true;if(F.track.scrollLeft>20)film.classList.add('swiped');}},{passive:true});
   }else if(film){
     all('figure',film).forEach(function(f){f.classList.add('reveal');});
   }
   function layoutFilm(){
     if(!F)return;
-    var vw=w.innerWidth,padL=parseFloat(getComputedStyle(F.track).paddingLeft)||0;
+    var vw=w.innerWidth,sw=vw<=760;
+    if(sw!==F.sw){
+      F.sw=sw;film.classList.toggle('on',!sw);film.classList.toggle('swipe',sw);
+      film.style.height='';F.track.style.transform='';F.track.scrollLeft=0;
+      F.items.forEach(function(f){f.el.style.transform='';if(f.fx)f.fx.style.transform='';if(f.img)f.img.style.translate='';});
+      F.cards.forEach(function(c){delete c.dataset.y;});
+    }
+    var cs=getComputedStyle(F.track),padL=parseFloat(cs.paddingLeft)||0;
     // Fit each photo inside the strip's height and a max width, keeping its shape.
-    var H=F.track.clientHeight,W=vw*(vw<700?.84:.7);
+    var H=F.track.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0),W=vw*(sw?.8:vw<700?.84:.7);
     F.figs.forEach(function(f){var q=f.img.getAttribute('width')/f.img.getAttribute('height')||1.5,fh=H,fw=fh*q;if(fw>W){fw=W;fh=fw/q;}f.el.style.width=Math.round(fw)+'px';f.el.style.height=Math.round(fh)+'px';});
+    F.items.forEach(function(f){f.l=f.el.offsetLeft;f.w=f.el.offsetWidth;});
+    if(sw){F.dist=Math.max(0,F.track.scrollWidth-F.track.clientWidth);F.dirty=true;return;}
     F.dist=Math.max(0,F.track.scrollWidth-vw);
     F.k=.6;
     film.style.height=(F.pin.offsetHeight+F.dist*F.k)+'px';
     F.top=film.getBoundingClientRect().top+w.scrollY;
-    F.items.forEach(function(f){f.l=f.el.offsetLeft;f.w=f.el.offsetWidth;});
     F.cards.forEach(function(c){c.dataset.y=Math.round(F.top+clamp(c.offsetLeft-padL,0,F.dist)*F.k);});
   }
   function updateFilm(y,vw){
-    var p=F.dist?clamp((y-F.top)/(F.dist*F.k),0,1):0,x=p*F.dist,fx=vw*(.3+.5*p),best=0,bd=1e9;
-    F.track.style.transform='translate3d('+(-x).toFixed(1)+'px,0,0)';
+    var p,x,fx,best=0,bd=1e9;
+    if(F.sw){x=F.track.scrollLeft;p=F.dist?clamp(x/F.dist,0,1):0;fx=F.track.clientWidth/2;}
+    else{
+      p=F.dist?clamp((y-F.top)/(F.dist*F.k),0,1):0;x=p*F.dist;fx=vw*(.3+.5*p);
+      F.track.style.transform='translate3d('+(-x).toFixed(1)+'px,0,0)';
+    }
     F.bar.style.setProperty('--fp',p.toFixed(4));
     F.items.forEach(function(f,i){
       var cx=f.l-x+f.w/2,off=(cx-fx)/vw;
       if(off>-1.6&&off<1.6){
-        var a=clamp(off*34,-48,48),z=Math.min(Math.abs(off),1.3)*-260;
-        f.el.style.transform='translateZ('+z.toFixed(0)+'px) rotateY('+a.toFixed(2)+'deg)';
+        var a=clamp(off*(F.sw?42:34),-48,48),z=Math.min(Math.abs(off),1.3)*(F.sw?-180:-260);
+        // Turn the photo's inner box, not the figure: on phones the figure is a scroll-snap target,
+        // and snapping to a box that moves with the scroll makes the strip fight itself.
+        if(!f.card)f.fx.style.transform='translateZ('+z.toFixed(0)+'px) rotateY('+a.toFixed(2)+'deg)';
+        else if(!F.sw)f.el.style.transform='translateZ('+z.toFixed(0)+'px) rotateY('+a.toFixed(2)+'deg)';
         if(!f.card)f.img.style.translate=(off*-7).toFixed(2)+'% 0';
       }
       if(!f.card){var dd=Math.abs(cx-fx);if(dd<bd){bd=dd;best=i;}}
@@ -276,7 +298,8 @@
   }
   if(F){
     // Load the strip's photos a little before it arrives, since they sit off-screen to the right.
-    var lo=new IntersectionObserver(function(es){if(es[0].isIntersecting){F.figs.forEach(function(f){f.img.loading='eager';});lo.disconnect();}},{rootMargin:'150% 0px'});
+    // On phones the strip is a normal scroller, so the browser's own lazy loading keeps up.
+    var lo=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!F.sw){F.figs.forEach(function(f){f.img.loading='eager';});lo.disconnect();}},{rootMargin:'150% 0px'});
     lo.observe(film);
   }
 
@@ -291,7 +314,7 @@
     if(hero)hero.style.setProperty('--hp',clamp(y/hero.offsetHeight,0,1).toFixed(3));
     if(S)updateStack(y,vh);
     if(tline)updateTimeline(vh);
-    if(F)updateFilm(y,vw);
+    if(F&&!F.sw)updateFilm(y,vw);
   }
   function loop(){
     requestAnimationFrame(loop);
@@ -301,6 +324,7 @@
     if(reduce)return;
     if(rib){var b=rib.getBoundingClientRect();if(b.bottom>0&&b.top<vh){var s=sk+(clamp(dy*.3,-9,9)-sk)*.12;if(Math.abs(s-sk)>.005){sk=s;rib.style.setProperty('--sk',sk.toFixed(2)+'deg');}}}
     if(R&&R.vis)updateRing(dy);
+    if(F&&F.sw&&F.dirty){F.dirty=false;updateFilm(0,w.innerWidth);}
     if(springs.length)runSprings();
     if(cur&&(Math.abs(px-cx)>.1||Math.abs(py-cy)>.1)){cx+=(px-cx)*.2;cy+=(py-cy)*.2;cur.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0)';}
   }
@@ -382,6 +406,23 @@
     all('.curtain').forEach(function(c){c.remove();});
     r.classList.remove('leaving');
   });
+
+  // Phone menu: the button opens a sheet of links; picking one closes it.
+  var bgr=d.getElementById('burger'),ms=d.getElementById('msheet');
+  function menu(open){
+    r.classList.toggle('menu-open',open);
+    bgr.setAttribute('aria-expanded',open);bgr.setAttribute('aria-label',open?'Close menu':'Open menu');
+    ms.setAttribute('aria-hidden',!open);ms.inert=!open;
+    if(open)nav.classList.remove('on-dark');else dirty=true;
+    if(lenis){if(open)lenis.stop();else lenis.start();}
+  }
+  if(bgr&&ms){
+    ms.inert=true;
+    bgr.addEventListener('click',function(){menu(!r.classList.contains('menu-open'));});
+    ms.addEventListener('click',function(e){if(e.target.closest('a'))menu(false);});
+    d.addEventListener('keydown',function(e){if(e.key==='Escape'&&r.classList.contains('menu-open')){menu(false);bgr.focus();}});
+    matchMedia('(min-width:821px)').addEventListener('change',function(m){if(m.matches)menu(false);});
+  }
 
   var copy=d.getElementById('copy');
   if(copy)copy.addEventListener('click',function(){
