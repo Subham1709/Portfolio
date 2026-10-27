@@ -160,6 +160,7 @@ section{padding:130px 0 0}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 .p3d{position:relative;border-radius:28px;transform-style:preserve-3d}
 .p3d .frame{border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);border:1px solid var(--line)}
+.p3d .frame picture{display:block;width:100%;height:100%}
 .p3d .frame img{width:100%;height:100%;object-fit:cover}
 .badge{position:absolute;z-index:3;background:color-mix(in srgb,var(--surface) 82%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line-2);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:var(--shadow);line-height:1.35;transform:translateZ(70px)}
 .badge b{display:block;font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.03em}
