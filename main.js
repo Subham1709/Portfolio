@@ -63,7 +63,7 @@
   if(!reduce)all('.hero h1,.sec-head h2,.life-hero h1,.contact h2,.ch-card h3,.np-h').forEach(split);
   all('.pillars,.stats,.recog,.hobbies').forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i);});});
 
-  // Number each project card: 01 / 07.
+  // Number the three featured project cards.
   var projs=all('.projects .project');
   projs.forEach(function(p,i){var im=p.querySelector('.p-img');if(im)im.setAttribute('data-n',pad(i+1)+' / '+pad(projs.length));});
 
@@ -356,7 +356,7 @@
   }
 
   // Intro: a short preloader on the first visit, a curtain after moving between pages.
-  var MARK='<span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="13.5" cy="16" r="6.5"/><path d="M13.5 9.5H25"/></svg></span>';
+  var MARK='<span class="brand-word" aria-hidden="true">subham<span class="brand-stop">.</span><small>AGRAWAL</small></span>';
   function curtain(cls){var c=d.createElement('div');c.className='curtain '+(cls||'');c.setAttribute('aria-hidden','true');c.innerHTML=MARK;d.body.appendChild(c);return c;}
   function lift(el,delay){
     setTimeout(function(){el.classList.add('out');start();},delay);
@@ -369,7 +369,7 @@
   else if(arrived){var c=curtain();r.classList.remove('cover');requestAnimationFrame(function(){lift(c,60);});}
   else if(first){
     var L=d.createElement('div');L.className='loader';L.setAttribute('aria-hidden','true');
-    L.innerHTML='<div class="ld-in"><div class="ld-logo">'+MARK+'<span>Subham Agrawal</span></div><p class="ld-tag"></p><div class="ld-row"><span class="ld-bar"><i></i></span><span class="ld-num">000</span></div></div>';
+    L.innerHTML='<div class="ld-in"><div class="ld-logo">'+MARK+'</div><p class="ld-tag"></p><div class="ld-row"><span class="ld-bar"><i></i></span><span class="ld-num">000</span></div></div>';
     var tag=L.querySelector('.ld-tag');tag.textContent=d.body.getAttribute('data-tag')||'Subham Agrawal';split(tag);
     d.body.appendChild(L);r.classList.remove('cover');
     if(lenis)lenis.stop();
