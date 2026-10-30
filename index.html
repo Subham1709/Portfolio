@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Subham Agrawal | Quant Research &amp; Derivatives</title>
-<meta name="description" content="Subham Agrawal: final-year IIT Jodhpur undergraduate researching Indian market volatility, India VIX and out-of-sample model testing. Open to quant trading and research roles.">
+<title>Subham Agrawal | Derivatives, Volatility &amp; Trading</title>
+<meta name="description" content="Subham Agrawal: final-year IIT Jodhpur undergraduate who builds and backtests options and volatility models on real NSE, SPX and crypto order-book data. Open to derivatives trading roles.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://subham-agrawal.vercel.app/">
-<meta property="og:title" content="Subham Agrawal | Quant Research &amp; Derivatives">
-<meta property="og:description" content="Quant research tested against market reality. Explore derivatives pricing, hedging, volatility, and honest out-of-sample results.">
+<meta property="og:title" content="Subham Agrawal | Derivatives, Volatility &amp; Trading">
+<meta property="og:description" content="Options and volatility models tested on real market prices: India VIX, Nifty puts, Heston, deep hedging and order books, with the limits in plain view.">
 <meta property="og:image" content="https://subham-agrawal.vercel.app/img/social-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-tag="Quant research, tested against reality.">
+<body data-tag="Options and volatility, tested on real prices.">
 <nav><div class="wrap">
   <a class="logo" href="#" aria-label="Subham Agrawal, home"><span class="brand-word">subham<span class="brand-stop">.</span><small>AGRAWAL</small></span></a>
   <div class="menu">
@@ -32,7 +32,7 @@
     <a href="#about" class="hide-md">About</a>
     <a href="#journey" class="hide-md">Journey</a>
     <a href="life.html">Off the clock</a>
-    <a href="Subham_Agrawal_Resume_QuantResearch.pdf" target="_blank" rel="noopener" class="pill"><span class="pill-long">Quant résumé</span><span class="pill-short">CV</span> ↗</a>
+    <a href="Subham_Agrawal_Resume_Trading.pdf" target="_blank" rel="noopener" class="pill"><span class="pill-long">Résumé</span><span class="pill-short">CV</span> ↗</a>
     <button id="theme" aria-label="Toggle dark mode">☾</button>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="msheet"><span></span><span></span></button>
   </div>
@@ -47,7 +47,7 @@
       <li style="--i:4"><a href="#contact"><span>05</span>Contact</a></li>
     </ol>
     <div class="ms-foot">
-      <a class="btn primary" href="Subham_Agrawal_Resume_QuantResearch.pdf" target="_blank" rel="noopener">Quant résumé ↗</a>
+      <a class="btn primary" href="Subham_Agrawal_Resume_Trading.pdf" target="_blank" rel="noopener">Résumé ↗</a>
       <a class="btn" href="mailto:b23ci1038@iitj.ac.in">Email</a>
       <a class="btn" href="https://www.linkedin.com/in/subham-agrawal-5b924128a/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
@@ -59,12 +59,12 @@
   <canvas id="surface" aria-hidden="true"></canvas>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <div class="eyebrow rise" style="--dl:.15s"><span class="dot"></span>Quant research · Derivatives · Risk</div>
-    <h1>Quant research, <em>tested against reality.</em></h1>
-    <p class="lead rise" style="--dl:.55s">I'm Subham Agrawal, a final-year IIT Jodhpur engineer with a minor in Mathematical and Computational Economics. I build models for markets, then test where they hold up out of sample—and where they don't.</p>
+    <div class="eyebrow rise" style="--dl:.15s"><span class="dot"></span>Derivatives · Volatility · Trading</div>
+    <h1>Options and volatility, <em>tested on real prices.</em></h1>
+    <p class="lead rise" style="--dl:.55s">I'm Subham Agrawal, a final-year IIT Jodhpur engineer with a minor in Mathematical and Computational Economics. I price and hedge options, then test the idea on real market prices, net of trading costs—and say where it breaks.</p>
     <div class="btns rise" style="--dl:.7s">
       <a class="btn primary" href="#work">See my work ↓</a>
-      <a class="btn" href="Subham_Agrawal_Resume_QuantResearch.pdf" target="_blank" rel="noopener">Quant résumé ↗</a>
+      <a class="btn" href="Subham_Agrawal_Resume_Trading.pdf" target="_blank" rel="noopener">Résumé ↗</a>
       <a class="btn" href="#contact">Let's connect</a>
     </div>
   </div>
@@ -93,6 +93,21 @@
   </div>
 
   <div class="projects">
+    <article class="project reveal">
+      <div class="p-img"><span class="tag-float">OPTIONS · VOLATILITY · 2026</span><img src="img/proj-nse-real.png" alt="Implied volatility of a 3-month 5% out-of-the-money Nifty put, 2020 to 2026: the Black-Scholes model priced from India VIX sits above the market price implied from NSE data" loading="lazy"></div>
+      <div>
+        <div class="p-meta">FDRM course project, built solo · extended on my own to real NSE prices</div>
+        <h3>Nifty Options and India VIX on Real NSE Prices</h3>
+        <ul>
+          <li>Across 1,536 days (2020–26), India VIX exceeded the volatility Nifty then delivered on <b>78%</b> of days (Newey-West t = 2.8). Re-implemented NSE's VIX formula and split the market into low, normal and high fear regimes.</li>
+          <li>On <b>1.2 million</b> real Nifty option prices from NSE bhavcopies, Black-Scholes with VIX plus skew overpriced 3-month 5% out-of-the-money puts by a median <b>33%</b>.</li>
+          <li>A VIX-timed protective put returned <b>14.8%</b> a year vs 11.1% unhedged at real prices, worst fall −22.8% vs −38.4%. Most of that edge is one put held through the March 2020 crash; from July 2020 it is 16.2% vs 15.4%.</li>
+        </ul>
+        <div class="chips"><span class="chip">Black-Scholes</span><span class="chip">India VIX</span><span class="chip">Backtesting</span><span class="chip">statsmodels</span></div>
+        <div class="p-links"><a href="https://subham-nifty-hedge.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Nifty_Hedge_Real_Data" target="_blank" rel="noopener">Code ↗</a><a href="https://subham-fdrm-vix.streamlit.app/" target="_blank" rel="noopener">Course app ↗</a></div>
+      </div>
+    </article>
+
     <article class="project reveal">
       <div class="p-img"><span class="tag-float">DEEP LEARNING · DERIVATIVES · 2026</span><img src="img/proj-hedge.png" alt="Distribution of hedging profit and loss: deep hedge versus Heston delta hedge, with a much thinner loss tail for the deep hedge" loading="lazy"></div>
       <div>
@@ -123,20 +138,6 @@
       </div>
     </article>
 
-    <article class="project reveal">
-      <div class="p-img"><span class="tag-float">ML · EQUITIES · 2026</span><img src="img/proj-nifty.png" alt="Equity curves of a LightGBM long-short Nifty 100 strategy under naive, purged and walk-forward validation" loading="lazy"></div>
-      <div>
-        <div class="p-meta">Independent project · after López de Prado (2018)</div>
-        <h3>Nifty ML Alpha: Does the Backtest Leak?</h3>
-        <ul>
-          <li>Ranked 98 Nifty 100 stocks by next-month return with LightGBM and ridge on 15 price and volume features, 2010–2026, as a long-short portfolio net of 15 bps costs.</li>
-          <li>Shuffled K-fold inflated the Sharpe ratio about <b>7x (3.68 vs 0.53)</b>; purged, embargoed K-fold and walk-forward agree on the honest number.</li>
-          <li>A placebo on random-walk stocks proved it: naive K-fold found a <b>Sharpe of 5 in pure noise</b>, the leak-free methods found nothing. Out of sample the simple ridge model won.</li>
-        </ul>
-        <div class="chips"><span class="chip">LightGBM</span><span class="chip">Purged CV</span><span class="chip">Walk-forward</span><span class="chip">Backtesting</span></div>
-        <div class="p-links"><a href="https://subham-nifty-ml-alpha.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Nifty_ML_Alpha" target="_blank" rel="noopener">Code ↗</a></div>
-      </div>
-    </article>
 
 
   </div>
@@ -152,10 +153,10 @@
       <div class="p-links"><a href="https://subham-deeplob.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/DeepLOB" target="_blank" rel="noopener">Code ↗</a></div></div>
     </article>
     <article class="work-mini reveal">
-      <img src="img/proj-vix.png" alt="India VIX and realised Nifty volatility" loading="lazy">
-      <div><span class="p-meta">VOLATILITY · 2026</span><h4>Volatility Dynamics and the Fear Index</h4>
-      <p>Across 1,536 days, implied volatility exceeded realised volatility on <b>78% of days</b>; a VIX-timed protective put reduced backtested maximum drawdown from <b>−38% to −22%</b>.</p>
-      <div class="p-links"><a href="https://subham-fdrm-vix.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/FDRM_VIX" target="_blank" rel="noopener">Code ↗</a></div></div>
+      <img src="img/proj-nifty.png" alt="Equity curves of a LightGBM long-short Nifty 100 strategy under naive, purged and walk-forward validation" loading="lazy">
+      <div><span class="p-meta">ML · EQUITIES · 2026</span><h4>Nifty ML Alpha: Does the Backtest Leak?</h4>
+      <p>Shuffled cross-validation inflated the Sharpe ratio about <b>7x (3.68 vs 0.53)</b>; a placebo on random walks found a Sharpe of 5 in pure noise. Purged CV fixed it.</p>
+      <div class="p-links"><a href="https://subham-nifty-ml-alpha.streamlit.app/" target="_blank" rel="noopener">Live app ↗</a><a href="https://github.com/Subham1709/Nifty_ML_Alpha" target="_blank" rel="noopener">Code ↗</a></div></div>
     </article>
     <article class="work-mini reveal">
       <img src="img/proj-landslide.jpg" alt="Landslide susceptibility map of Hamirpur" loading="lazy">
@@ -187,26 +188,33 @@
         <p class="big">Civil engineering taught me how systems fail. Economics made me ask <em>why people decide the way they do.</em> Data is how I test both.</p>
         <p style="color:var(--muted);margin-top:22px">Away from the screen I run media teams, captain cultural contingents and shoot photos. That's where I learned to lead people and to find the one detail that makes a story click.</p>
         <div class="toolkit">
-          <span>Python</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>statsmodels</span><span>scikit-learn</span><span>XGBoost</span><span>SQL</span><span>C++</span><span>Black-Scholes</span><span>Greeks</span><span>HAR</span><span>Newey-West</span><span>Google Earth Engine</span>
+          <span>Futures &amp; options</span><span>Black-Scholes</span><span>Greeks</span><span>Put-call parity</span><span>Implied vs realised vol</span><span>Delta hedging</span><span>Python</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>statsmodels</span><span>PyTorch</span><span>LightGBM</span><span>SQL</span><span>C++</span><span>Excel</span>
         </div>
       </div>
       <div class="facts reveal">
         <div class="fact"><span>Degree</span><span>B.Tech, Civil and Infrastructure Engg.</span></div>
         <div class="fact"><span>Minor</span><span>Mathematical and Computational Economics</span></div>
         <div class="fact"><span>Institute</span><span>IIT Jodhpur, 2023–2027</span></div>
-        <div class="fact"><span>Coursework</span><span>Probability and Stochastic Processes, Econometrics, Game Theory, DSA</span></div>
-        <div class="fact"><span>Now studying</span><span>Derivatives and Risk Management, ML for Economics</span></div>
-        <div class="fact"><span>Looking for</span><span>Quant trading, quant research and risk roles</span></div>
+        <div class="fact"><span>Coursework</span><span>Derivatives and Risk Management, Probability and Stochastic Processes, Econometrics, Game Theory, DSA</span></div>
+        <div class="fact"><span>Now studying</span><span>ML for Economics, Intro to Machine Learning</span></div>
+        <div class="fact"><span>Looking for</span><span>Derivatives trading roles in international markets</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="journey">
-  <div class="sec-head reveal"><div><span class="num">03 / JOURNEY</span><h2>Competitions <em>and people.</em></h2></div><p>The work behind the models: teams, decisions, and communication.</p></div>
+  <div class="sec-head reveal"><div><span class="num">03 / JOURNEY</span><h2>Aptitude, competitions <em>and people.</em></h2></div><p>Speed with numbers, and the teams, decisions and communication behind the models.</p></div>
+  <div class="stats reveal" style="margin-bottom:28px">
+    <div class="stat"><b>Top 1%</b><span>JEE Main 2023, of 1.3 million candidates</span></div>
+    <div class="stat"><b>1500+</b><span>Matiks rating in maths sprint duels</span></div>
+    <div class="stat"><b>Top 300</b><span>IOQM 2020, Odisha (<a href="https://drive.google.com/file/d/14cF2TTk1Kzqj_IvLtD4ZMzSbuDEJDora/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--accent)">certificate</a>)</span></div>
+    <div class="stat"><b class="sm">GATE · NDA</b><span>GATE 2026 qualified (Civil); NDA 2021 written exam qualified (<a href="https://drive.google.com/file/d/1k-SbwXJn2bZvTMqCk4ZUnFNvO1J3trE7/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--accent)">certificate</a>)</span></div>
+  </div>
   <div class="timeline">
     <div class="tl reveal"><span class="yr">2024</span><div><h4>Quant team, Inter IIT Tech Meet 13.0</h4><p>Built crypto price-direction models from time-series features, with statistical tests to check the signals weren't noise. Team ranked 11th overall.</p></div><span class="org">Zelta Labs</span></div>
     <div class="tl reveal"><span class="yr">2026</span><div><h4>VC Analyst case study</h4><p>Picked 3 of 20 startups for a USD 10M fund; team ranked 4th of 159.</p></div><span class="org">Fin Maverick</span></div>
+    <div class="tl reveal"><span class="yr">2025</span><div><h4>Assistant Head of Finance, Prometeo '25</h4><p>Budgeted events and artists: about INR 15 lakh of an INR 40 lakh+ fest budget.</p></div><span class="org">IIT Jodhpur</span></div>
     <div class="tl reveal"><span class="yr">2025–26</span><div><h4>Head of Media, Prometeo '26</h4><p>Led 25+ juniors across ideation, shoots and production; several reels crossed 500k views.</p></div><span class="org">IIT Jodhpur</span></div>
     <div class="tl reveal"><span class="yr">2024–25</span><div><h4>Cultural Captain, Speaking and Comedic Arts</h4><p>Led a 25+ member contingent at IIT Patna and IIT Kanpur; top-10 finishes in several events.</p></div><span class="org">Inter IIT Cultural Meet</span></div>
   </div>
@@ -245,10 +253,11 @@
   <div class="wrap reveal">
     <span class="num">05 / CONTACT</span>
     <h2>Let's <em>connect.</em></h2>
-    <p class="lead" style="margin:18px auto 0">I'm open to quant trading, research and risk roles. The fastest way to reach me is email; my phone number is on my resume.</p>
+    <p class="lead" style="margin:18px auto 0">I'm open to derivatives trading roles, and to quant research and risk. The fastest way to reach me is email; my phone number is on my resume.</p>
     <div class="btns">
-      <a class="btn primary" href="mailto:b23ci1038@iitj.ac.in">b23ci1038@iitj.ac.in</a>
+      <a class="btn" href="mailto:b23ci1038@iitj.ac.in">b23ci1038@iitj.ac.in</a>
       <button class="btn" id="copy">Copy email</button>
+      <a class="btn primary" href="Subham_Agrawal_Resume_Trading.pdf" target="_blank" rel="noopener">Trading résumé ↗</a>
       <a class="btn" href="Subham_Agrawal_Resume_QuantResearch.pdf" target="_blank" rel="noopener">Quant research résumé ↗</a>
       <a class="btn" href="Subham_Agrawal_Resume_CreditRisk.pdf" target="_blank" rel="noopener">Credit risk résumé ↗</a>
       <a class="btn" href="Subham_Agrawal_Resume.pdf" target="_blank" rel="noopener">General résumé ↗</a>
